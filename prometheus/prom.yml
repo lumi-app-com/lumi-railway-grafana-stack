@@ -10,6 +10,11 @@ scrape_configs:
     static_configs:
       - targets: ['postgres-metrics-collector.railway.internal:9187']
 
+  - job_name: 'railway-exporter'
+    scrape_interval: 1m
+    static_configs:
+      - targets: ['prometheus-exporter.railway.internal:9090']
+
   # - job_name: 'example_api'
   #   scheme: http
   #   static_configs:
